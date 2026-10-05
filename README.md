@@ -257,7 +257,7 @@ CJK 交给系统 CJK 字体（微软雅黑 / Noto Sans SC 等）绘制并按全�
 ### 测试
 
 ```bash
-python -m pytest scripts/test_codepng.py -q
+python -m pytest scripts/test_kk_codeimg.py -q
 ```
 
 47 项测试，覆盖缩进保留、中文出字、12 主题 / 12 背景 / 16 风格 / 10 别名渲染、
@@ -536,7 +536,7 @@ so `border_radius=0` gives you genuinely square corners.
 ### Tests
 
 ```bash
-python -m pytest scripts/test_codepng.py -q
+python -m pytest scripts/test_kk_codeimg.py -q
 ```
 
 47 tests covering indentation preservation, CJK rendering, all 12 themes /

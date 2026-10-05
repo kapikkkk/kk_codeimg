@@ -14,7 +14,7 @@ license = "MIT"
 license-files = ["LICENSE"]
 authors = [{ name = "Python卡皮巴拉" }]
 keywords = [
-    "code-image", "codeimg", "code-screenshot", "carbon", "codepng",
+    "code-image", "codeimg", "code-screenshot", "carbon",
     "syntax-highlight", "png", "thumbnail", "social-media",
     "代码截图", "代码图片", "分享图",
 ]

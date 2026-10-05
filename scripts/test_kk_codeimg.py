@@ -1,4 +1,4 @@
-"""关键行为回归测试：python -m pytest scripts/test_codepng.py -q"""
+"""关键行为回归测试：python -m pytest scripts/test_kk_codeimg.py -q"""
 
 import os
 import sys
