@@ -1,42 +1,18 @@
 # kk_codeimg
 
-<p align="center">
-  <b>🌟【Python卡皮巴拉】—— 你的Python修炼秘籍，代码界的"神兽"驾到！🌟</b>
-</p>
+**🌟【Python卡皮巴拉】—— 你的Python修炼秘籍，代码界的"神兽"驾到！🌟**
 
-<p align="center">
-  <b>🌟 [Python Capybara] — Your Python cultivation manual; the coding realm's "mythical beast" has arrived! 🌟</b>
-</p>
+**🌟 [Python Capybara] — Your Python cultivation manual; the coding realm's "mythical beast" has arrived! 🌟**
 
-<p align="center">
-  <a href="#中文">🇨🇳 中文</a> · <a href="#english">🇬🇧 English</a>
-</p>
+[PyPI](https://pypi.org/project/kk_codeimg/) · [MIT License](LICENSE) · [Python 3.8+](https://pypi.org/project/kk_codeimg/)
 
-<p align="center">
-  <a href="https://pypi.org/project/kk_codeimg/"><img src="https://img.shields.io/pypi/v/kk_codeimg.svg" alt="PyPI version"></a>
-  <a href="https://pypi.org/project/kk_codeimg/"><img src="https://img.shields.io/pypi/l/kk_codeimg.svg" alt="License"></a>
-  <a href="https://pypi.org/project/kk_codeimg/"><img src="https://img.shields.io/pypi/pyversions/kk_codeimg.svg" alt="Python versions"></a>
-</p>
+**语言 / Language**: [中文](#中文) · [English](#english)
 
 ---
 
-<a name="中文"></a>
-
 ## 中文
 
-把代码渲染成精美的代码图片。纯 Python（`Pillow` + `Pygments`），
-**离线运行**，不依赖浏览器、不启动 headless Chrome、不联网。
-
-### 特点
-
-- 🎨 **12 套主题** —— 全部通过 WCAG AA 对比度校验，不是"看着差不多"
-- 🖼️ **16 种预设风格** —— 一行代码切换整套视觉配置
-- 🏷️ **窗口标题** —— 显示文件名，支持中文，字体与代码自动统一
-- 🇨🇳 **中英文混排** —— 等宽字体没有中文字形？自动回退到系统 CJK 字体
-- 🔒 **对比度达标** —— 按 WCAG 标准实算，注释不再"灰到看不见"
-- 🐍 **纯离线** —— CI 里也能跑，不发起任何网络请求
-- 🪶 **零重型依赖** —— 只用 `Pillow` + `Pygments`
-- 🧩 **主题可扩展** —— 加一套主题只需往 `palette.py` 里加一组色值
+[English](#english) · [安装](#安装) · [风格](#预设风格) · [参数](#常用参数)
 
 ### 安装
 
@@ -54,40 +30,50 @@ code_generator(code, 'python', output='out.png')
 
 不传 `output` 时返回 `PIL.Image.Image`，可自行 `.save()` 或做后处理。
 
+### 特点
+
+- **12 套主题** —— 全部通过 WCAG AA 对比度校验，不是"看着差不多"
+- **16 种预设风格** —— 一行代码切换整套视觉配置
+- **窗口标题** —— 显示文件名，支持中文，字体与代码自动统一
+- **中英文混排** —— 等宽字体没有中文字形？自动回退到系统 CJK 字体
+- **对比度达标** —— 按 WCAG 标准实算，注释不再"灰到看不见"
+- **纯离线** —— 不联网、不开浏览器，CI 里也能跑
+- **零重型依赖** —— 只用 `Pillow` + `Pygments`
+- **主题可扩展** —— 加一套主题只需往 `palette.py` 里加一组色值
+
 ### 效果预览
 
-<table>
-<tr>
-<td width="50%"><img src="docs/preview-dark.png" alt="深色主题 + 窗口标题"></td>
-<td width="50%"><img src="docs/preview-light.png" alt="浅色主题"></td>
-</tr>
-<tr>
-<td align="center"><sub>One Dark + 渐变背景（默认）</sub></td>
-<td align="center"><sub>GitHub Light 浅色主题</sub></td>
-</tr>
-<tr>
-<td><img src="docs/preview-neon.png" alt="neon 风格"></td>
-<td><img src="docs/preview-ocean.png" alt="ocean 风格"></td>
-</tr>
-<tr>
-<td align="center"><sub><code>style='neon'</code> 大圆角霓虹</sub></td>
-<td align="center"><sub><code>style='ocean'</code> 冷色克制</sub></td>
-</tr>
-<tr>
-<td><img src="docs/preview-sticker.png" alt="sticker 风格"></td>
-<td><img src="docs/preview-grid.png" alt="grid 风格"></td>
-</tr>
-<tr>
-<td align="center"><sub><code>style='sticker'</code> 贴纸风大圆角</sub></td>
-<td align="center"><sub><code>style='grid'</code> 零圆角网格纸</sub></td>
-</tr>
-</table>
+**One Dark 主题 + 渐变背景（默认 `default`）**
+
+![One Dark 主题 + 渐变背景（默认 `default`）](docs/preview-dark.png)
+
+**GitHub Light 浅色主题（`github`）**
+
+![GitHub Light 浅色主题（`github`）](docs/preview-light.png)
+
+**`neon` 霓虹：大圆角 + Cool Glow**
+
+![`neon` 霓虹：大圆角 + Cool Glow](docs/preview-neon.png)
+
+**`ocean` 冷色克制**
+
+![`ocean` 冷色克制](docs/preview-ocean.png)
+
+**`sticker` 贴纸风：夸张圆角**
+
+![`sticker` 贴纸风：夸张圆角](docs/preview-sticker.png)
+
+**`grid` 零圆角网格纸**
+
+![`grid` 零圆角网格纸](docs/preview-grid.png)
 
 生成全套样图：
 
 ```bash
-python scripts/make_samples.py   # 输出到 out/
+python scripts/make_samples.py
 ```
+
+输出到 `out/`。
 
 ### 预设风格
 
@@ -285,19 +271,15 @@ python -m pytest scripts/test_codepng.py -q
 - 透明模式 + 浅色主题时，背景渐变基本透不出来（实测需 100% 不透明才达 AA），
   想要通透感建议用深色主题配 `style='frosted'`
 
-### 发布
-
-见 [`PUBLISH.md`](PUBLISH.md)。
-
 ### 许可证
 
 [MIT](LICENSE) © 2026 Python卡皮巴拉
 
 ---
 
-<a name="english"></a>
-
 ## English
+
+[中文](#中文) · [Install](#installation) · [Styles](#preset-styles) · [Parameters](#parameters)
 
 Turn your code into beautiful, share-ready code images.
 Pure Python (`Pillow` + `Pygments`) — **fully offline**: no browser, no headless
@@ -335,38 +317,35 @@ Without `output`, a `PIL.Image.Image` is returned so you can post-process it you
 
 ### Preview
 
-<table>
-<tr>
-<td width="50%"><img src="docs/preview-dark.png" alt="Dark theme with window title"></td>
-<td width="50%"><img src="docs/preview-light.png" alt="Light theme"></td>
-</tr>
-<tr>
-<td align="center"><sub>One Dark + gradient (default)</sub></td>
-<td align="center"><sub>GitHub Light theme</sub></td>
-</tr>
-<tr>
-<td><img src="docs/preview-neon.png" alt="neon style"></td>
-<td><img src="docs/preview-ocean.png" alt="ocean style"></td>
-</tr>
-<tr>
-<td align="center"><sub><code>style='neon'</code> — large radius, neon</sub></td>
-<td align="center"><sub><code>style='ocean'</code> — cool, restrained</sub></td>
-</tr>
-<tr>
-<td><img src="docs/preview-sticker.png" alt="sticker style"></td>
-<td><img src="docs/preview-grid.png" alt="grid style"></td>
-</tr>
-<tr>
-<td align="center"><sub><code>style='sticker'</code> — big rounded corners</sub></td>
-<td align="center"><sub><code>style='grid'</code> — square, monospace feel</sub></td>
-</tr>
-</table>
+**One Dark theme + gradient (default `default`)**
 
-Generate the full sample set:
+![One Dark theme + gradient (default `default`)](docs/preview-dark.png)
 
-```bash
-python scripts/make_samples.py   # writes to out/
+**GitHub Light theme (`github`)**
+
+![GitHub Light theme (`github`)](docs/preview-light.png)
+
+**`neon`: large radius + Cool Glow**
+
+![`neon`: large radius + Cool Glow](docs/preview-neon.png)
+
+**`ocean`: cool and restrained**
+
+![`ocean`: cool and restrained](docs/preview-ocean.png)
+
+**`sticker`: exaggerated radius**
+
+![`sticker`: exaggerated radius](docs/preview-sticker.png)
+
+**`grid`: square grid paper**
+
+![`grid`: square grid paper](docs/preview-grid.png)
+
+Generate the full sample set:/n/n```bash
+python scripts/make_samples.py
 ```
+
+Writes to `out/`.
 
 ### Preset styles
 
