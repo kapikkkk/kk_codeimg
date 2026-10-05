@@ -31,3 +31,8 @@ env/
 # 本地产物
 out/
 *.local
+
+README_PYPI.md
+pyproject.toml
+PUBLISH.md
+GIT_UPLOAD.md
