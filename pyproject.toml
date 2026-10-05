@@ -6,9 +6,9 @@ build-backend = "setuptools.build_meta"
 name = "kk_codeimg"
 version = "0.0.1"
 description = "把代码渲染成精美的代码图片：12 套主题、16 种预设风格，支持窗口标题与中英文混排，纯 Pillow + Pygments 离线渲染"
-# GitHub 用双语完整版 README.md。PyPI 不支持相对路径图片，
-# 发版时临时切到 README_PYPI.md（该文件仅本地保留，不入仓库）。
-readme = "README.md"
+# PyPI 页面不渲染相对路径图片，会显示裂图。
+# 故指向 README_PYPI.md（由中文版剔图生成，仅本地保留、不入仓库）。
+readme = "README_PYPI.md"
 requires-python = ">=3.8"
 license = "MIT"
 license-files = ["LICENSE"]
