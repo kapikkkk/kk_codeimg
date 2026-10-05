@@ -32,10 +32,6 @@ env/
 out/
 *.local
 
-README_PYPI.md
-pyproject.toml
-PUBLISH.md
-GIT_UPLOAD.md
 # 不上传到 GitHub 的文件（PyPI / 本地发版专用）
 # 注意：pyproject.toml 必须上传，否则无法 `pip install git+https://...`
 README_PYPI.md

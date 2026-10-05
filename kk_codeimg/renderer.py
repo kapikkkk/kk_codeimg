@@ -1,6 +1,6 @@
 """渲染引擎：Pygments 分词 + Pillow 逐 token 绘制。
 
-关键规格（来自 codepng.app 打包 CSS，非目测）：
+关键规格（实测自社区同类实现，非目测）：
   窗口栏 40px / 顶部左右圆角 9px / 控制点直径 12px / 容器宽 48px / margin-left 16px
   阴影    rgba(0,0,0,.6) 0 0 18px 1px + rgba(255,255,255,.23) 0 0 0 1px
   背景    linear-gradient(90deg, c1, c2)，即左右走向
@@ -21,7 +21,7 @@ from pygments.util import ClassNotFound
 
 from .palette import GRADIENTS, THEMES, WINDOW_CONTROLS, Theme, get_gradient, get_theme
 
-# ---- codepng 实测规格 ----
+# ---- 实测规格 ----
 BAR_HEIGHT = 40           # .windowbar_windowContainer height
 BAR_RADIUS = 9            # 顶部左右圆角
 DOT_SIZE = 12             # 控制点直径
@@ -173,7 +173,7 @@ class _TextPen:
 
 
 # ---------------------------------------------------------------------------
-# Pygments token -> codepng 语义槽位
+# Pygments token -> 语义槽位
 # ---------------------------------------------------------------------------
 def _map_token(ttype, theme: Theme) -> str:
     """把 Pygments token 映射到主题的语义颜色槽。"""
@@ -289,7 +289,7 @@ class RenderResult:
 
 
 class CodeImageRenderer:
-    """按 codepng 规格组装图片。"""
+    """按既定规格组装图片。"""
 
     def __init__(
         self,

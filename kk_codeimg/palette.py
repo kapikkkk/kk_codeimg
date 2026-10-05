@@ -1,7 +1,7 @@
 """配色预设。
 
-色值取自 codepng.app 公开的 CSS/JS 打包产物（CC 授权的第三方配色方案，
-在此基础上按 WCAG 对比度标准做了修正），非目测近似。
+色值取自社区公开的编辑器主题方案（MIT / CC 授权），
+并在此基础上按 WCAG 对比度标准做了修正，非目测近似。
 """
 
 from __future__ import annotations
@@ -29,7 +29,7 @@ def _hex_to_rgb(value: str) -> Tuple[int, int, int]:
 
 
 def _hsl_to_rgb(h: int, s: int, l: int) -> Tuple[int, int, int]:
-    """codepng 主题里用了 hsl(...) 字面量，这里做等价换算。"""
+    """部分主题用了 hsl(...) 字面量，这里做等价换算。"""
     r, g, b = colorsys.hls_to_rgb(h / 360.0, l / 100.0, s / 100.0)
     return round(r * 255), round(g * 255), round(b * 255)
 
@@ -129,7 +129,7 @@ def _t(name, dark, bg, fg, gutter, colors) -> Theme:
     return Theme(name, dark, bg, fg, gutter, colors)
 
 
-# 12 套主题，字段与 codepng 的 CodeMirror styles 数组一一对应
+# 12 套主题，字段与各编辑器的 CodeMirror styles 数组一一对应
 THEMES: Dict[str, Theme] = {
     "dracula": _t(
         "Dracula", True, "#282a36", "#f8f8f2", "#7d8799",
@@ -231,7 +231,7 @@ THEMES: Dict[str, Theme] = {
             "keyword": "#FF7AB2", "string": "#FF8170",
             "type_name": "#DABAFF", "definition_variable": "#6BDFFF",
             "name": "#6BAA9F", "variable_name": "#ACF2E4",
-            # codepng 原主题未定义以下槽位，这里按 Xcode 默认配色补齐，
+            # 原主题未定义以下槽位，这里按 Xcode 默认配色补齐，
             # 避免数字/运算符等退化成前景色（视觉上像没高亮）
             "number": "#DABAFF", "bool": "#DABAFF", "null": "#DABAFF",
             "operator": "#ACF2E4", "punctuation": "#ACF2E4",
@@ -246,7 +246,7 @@ THEMES: Dict[str, Theme] = {
             "type_name": "#522BB2", "keyword": "#aa0d91",
             "string": "#D23423", "name": "#032f62",
             "variable_name": "#23575C", "definition_variable": "#327A9E",
-            # 同上，补齐 codepng 未定义的基础槽位
+            # 同上，补齐原主题未定义的基础槽位
             "number": "#1C00CF", "bool": "#1C00CF", "null": "#1C00CF",
             "operator": "#3D3D3D", "punctuation": "#3D3D3D",
             "class_name": "#522BB2", "function": "#327A9E",
@@ -293,9 +293,9 @@ THEMES: Dict[str, Theme] = {
     ),
 }
 
-# codepng 线上收录的 10 套 Gradientos 渐变，值为 linear-gradient(90deg, c1, c2)
+# 10 套社区常用渐变，值为 linear-gradient(90deg, c1, c2)
 GRADIENTS: Dict[str, Tuple[str, str]] = {
-    "mystic":   ("#b993d6", "#8ca6db"),   # codepng 默认背景
+    "mystic":   ("#b993d6", "#8ca6db"),   # 默认背景
     "aruba":    ("#42afa1", "#78d4a8"),
     "jungle":   ("#c1b777", "#79c08d"),
     "tropical": ("#2bc0e4", "#eaecc6"),
@@ -307,7 +307,7 @@ GRADIENTS: Dict[str, Tuple[str, str]] = {
     "ocean":    ("#24c6dc", "#514a9d"),
 }
 
-# 窗口控制点配色（codepng 的 win-ctrl-style-*）
+# 窗口控制点配色（对应 CSS 的 win-ctrl-style-*）
 WINDOW_CONTROLS: Dict[str, Dict[str, Optional[str]]] = {
     "color":   {"exit": "#ff5f56", "min": "#ffbd2e", "max": "#27c93f", "border": None},
     "gray":    {"exit": "#ffffff40", "min": "#ffffff40", "max": "#ffffff40", "border": None},
